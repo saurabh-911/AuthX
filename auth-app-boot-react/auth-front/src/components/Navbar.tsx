@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "./ui/button";
 import { NavLink, useNavigate } from "react-router";
 import useAuth from "@/auth/store";
@@ -15,7 +14,7 @@ function Navbar() {
         <div className="flex justify-between items-center">
           {/* brand */}
           <NavLink to="/" className="flex items-center gap-2 group">
-            <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+            <div className="h-10 w-10 rounded-lg bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
               <span className="text-white font-bold text-lg">Ax</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -64,7 +63,7 @@ function Navbar() {
                 <NavLink to={"/signup"}>
                   <Button
                     size="sm"
-                    className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
+                    className="rounded-lg bg-linear-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
                   >
                     Sign Up
                   </Button>

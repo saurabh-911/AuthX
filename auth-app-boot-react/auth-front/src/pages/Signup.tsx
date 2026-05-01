@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
-import { Mail, Lock, User, Github, Chrome } from "lucide-react";
-import React, { useState, type FormEvent } from "react";
+import { Mail, Lock, User} from "lucide-react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
+
 import type RegisterData from "@/models/RegisterData";
 import { registerUser } from "@/services/AuthService";
 import { useNavigate } from "react-router";
@@ -85,23 +85,24 @@ function Signup() {
           <CardContent>
             {/* Heading */}
             <motion.div className="text-center mb-8">
-              <motion.h1
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
-              >
-                Create Account
-              </motion.h1>
+  <motion.h1
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.2 }}
+    className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+  >
+    Create Account
+  </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-center text-muted-foreground mt-2"
-            >
-              Join the next-generation authentication platform
-            </motion.p>
+  <motion.p
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.4 }}
+    className="text-center text-muted-foreground mt-2"
+  >
+    Join the next-generation authentication platform
+  </motion.p>
+</motion.div>   
 
             {/* Form */}
             <form onSubmit={handleFormSubmit} className="mt-8 space-y-5">

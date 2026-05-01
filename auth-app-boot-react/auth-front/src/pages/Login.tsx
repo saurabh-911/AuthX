@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
-import { Mail, Lock, Github, Chrome, CheckCircle2Icon } from "lucide-react";
+import { Mail, Lock, CheckCircle2Icon } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import type LoginData from "@/models/LoginData";
 import toast from "react-hot-toast";
-import { loginUser } from "@/services/AuthService";
+// import { loginUser } from "@/services/AuthService"; // using useAuth instead
 import { useNavigate } from "react-router";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { Spinner } from "@/components/ui/spinner";
@@ -76,7 +76,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-background/80 text-foreground px-4 py-10">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-background to-background/80 text-foreground px-4 py-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -106,10 +106,10 @@ function Login() {
 
             {/* error section */}
             {error && (
-              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className=\"mt-6\">
-                <Alert variant=\"destructive\" className=\"bg-red-500/10 border border-red-500/50 rounded-lg\">
+              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-6">
+                <Alert variant="destructive" className="bg-red-500/10 border border-red-500/50 rounded-lg">
                   <CheckCircle2Icon />
-                  <AlertTitle className=\"text-red-600 text-sm\">
+                  <AlertTitle className="text-red-600 text-sm">
                     {error?.response
                       ? error?.response?.data?.message
                       : error?.message}
@@ -160,7 +160,7 @@ function Login() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="w-full mt-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-2"
+                className="w-full mt-8 py-3 bg-linear-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -171,21 +171,12 @@ function Login() {
                   <span>Sign In</span>
                 )}
               </motion.button>
-                {loading ? (
-                  <>
-                    <Spinner />
-                    Please wait...
-                  </>
-                ) : (
-                  "Login"
-                )}
-              </Button>
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-4">
-                <div className="flex-1 h-[1px] bg-border"></div>
+                <div className="flex-1 h-px bg-border"></div>
                 <span className="text-muted-foreground text-sm">OR</span>
-                <div className="flex-1 h-[1px] bg-border"></div>
+                <div className="flex-1 h-px bg-border"></div>
               </div>
 
               {/* OAuth Buttons */}
